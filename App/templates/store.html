@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+  .middle-item{
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+  .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+
+.cards-wrapper{
+  text-align: center;
+  display: flex;
+  margin-left: 15%;
+}
+
+.card{
+  margin: 0;
+  width: calc(80%/3);
+  height: 600px;
+  color:white;
+  overflow: scroll;
+  background-color:#313439;
+  
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 300px;
+}
+
+.card-top{
+  margin: 0 .5rem;
+  width: calc(80%/3);
+  height: 600px;
+  background-color:#313439;
+  
+}
+
+</style>
+
+<!-- Resource: https://bbbootstrap.com/snippets/bootstrap-5-bootstrap-5-carousel-vanilla-multiple-items-80120567-->
+<h1 class="middle-item">GAMES ON SALE!</h1>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+
+        <div class="card-top" >
+          <img src="https://metro.co.uk/wp-content/uploads/2018/12/doomcover-36e5.jpg?quality=90&strip=all" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">DOOM</h2>
+            <h5>$29.99</h5>
+            <p class="card-text">Hordes of demons fall at your feet as heavy metal plays in the background.</p>
+          </div>
+        </div>
+        <div class="card-top" >
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpy5KdqOkldelf7gK9S7aOX5IZQVD-00doxw&usqp=CAU" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">Berzerk</h2>
+            <h5>$1.99</h5>
+            <p class="card-text">An Atari classic coming back to life for a low price!</p>
+          </div>
+        </div>
+        <div class="card-top">
+          <img src="https://joyenergizer.com/wp-content/uploads/2017/03/80s-video-games-covers-4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">Pac-Man</h2>
+            <h5>$9.99</h5>
+            <p class="card-text">A classic game for a classic price!</p>
+          </div>
+        </div>
+      
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+
+        <div class="card-top">
+          <img src="https://www.cheatcc.com/imagesfeatures/bestvideogameboxart_6.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">GTA IV</h2>
+            <h5>$14.99</h5>
+            <p class="card-text">Return to Liberty City to take advantage of crime. Steal cars, fire guns, and go for a swim.</p>
+          </div>
+        </div>
+        <div class="card-top" >
+          <img src="https://www.giantbomb.com/a/uploads/original/8/87790/2079822-box_disland.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">Dead Island</h2>
+            <h5>$29.99</h5>
+            <p class="card-text">A vaction gone wrong, you are now stranded on DEAD ISLAND. Are you able to find the source of the outbreak? Will you survive?</p>
+          </div>
+        </div>
+        <div class="card-top" >
+          <img src="https://media.comicbook.com/wp-content/uploads/2014/02/Lego_Hobbit_Videogame.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">LEGO: The Hobbit</h2>
+            <h5>$14.99</h5>
+            <p class="card-text">The JRR Tolkien book brought to life in the form of your favorite childhood toy.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+
+        <div class="card-top" >
+          <img src="https://cdn.mos.cms.futurecdn.net/7181e015d66e18d295a790568a8b5f55-320-80.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">GTA V</h2>
+            <h5>$19.99</h5>
+            <p class="card-text">The newest of the Grand Theft Auto series, its hard to believe it has been out for more than ten years.</p>
+          </div>
+        </div>
+        <div class="card-top">
+          <img src="https://media.gq.com/photos/5de828495bb28e00087aa16e/master/w_2500,h_3542,c_limit/10-the-best-video-games-of-2019-gq-december-120519.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">Jedi Fallen Order</h2>
+            <h5>$59.99</h5>
+            <p class="card-text">Fight as a jedi after order 66. Can you rebuild the order of the jedi?</p>
+          </div>
+        </div>
+        <div class="card-top">
+          <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/06/luc-de-haan-horizon-zero-dawn-box-cover-e1622673013889.jpg?auto=format&q=60&fit=max&w=930" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">Horizon: Zero Dawn</h2>
+            <h5>$59.99</h5>
+            <p class="card-text">Robot dinosaurs! What more could you want in a futuristic game?</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br/>
+<h3 class="middle-item">UP TO 50% OFF</h3>
+
+  <br/>
+
+<table class="table table-hover-cells game-table" style = "margin-left:0px;">
+    <thead>
+      <tr>
+        <!--Column Headers if needed-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+
+<!--List our games in a table format-->
+<input type="text" class="live-search-box form-control" placeholder="Search..." style = "color: white;background-color:#313439; border:#282d31" />
+
+<br>
+{% for i in range(0, games|length, 4) %}
+      <tr> 
+        <td>
+          <div class="card" style="width: 20vw;">
+          <img src="{{games[i].image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{games[i].name}}</h2>
+            <h5>{{games[i].price}}</h5>
+            <h6>Genre: {{games[i].genre}}</h6>
+            <p class="card-text">{{games[i].description}}</p>
+            <a href="{{url_for('addToCart', gameID=games[i].id)}}" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+      </td>
+      {% if games|length > i + 1 %}
+        <td>
+          <div class="card" style="width: 20vw;">
+          <img src="{{games[i+1].image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{games[i+1].name}}</h2>
+            <h5>{{games[i+1].price}}</h5>
+            <h6>Genre: {{games[i+1].genre}}</h6>
+            <p class="card-text">{{games[i+1].description}}</p>
+            <a href="{{url_for('addToCart', gameID=games[i+1].id)}}" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+        </td>
+      {% else %}
+        <td></td>
+      {% endif %}
+      {% if games|length > i + 2 %}
+        <td>
+          <div class="card" style="width: 20vw;">
+          <img src="{{games[i+2].image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{games[i+2].name}}</h2>
+            <h5>{{games[i+2].price}}</h5>
+            <h6>Genre: {{games[i+2].genre}}</h6>
+            <p class="card-text">{{games[i+2].description}}</p>
+            <a href="{{url_for('addToCart', gameID=games[i+2].id)}}" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+        </td>
+      {% else %}
+        <td></td>
+      {% endif %}
+      {% if games|length > i + 3 %}
+        <td>
+          <div class="card" style="width: 20vw;">
+          <img src="{{games[i+3].image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{games[i+3].name}}</h2>
+            <h5>{{games[i+3].price}}</h5>
+            <h6>Genre: {{games[i+3].genre}}</h6>
+            <p class="card-text">{{games[i+3].description}}</p>
+            <a href="{{url_for('addToCart', gameID=games[i+3].id)}}" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+        </td>
+      {% else %}
+        <td></td>
+      {% endif %}
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
+<!--https://www.geeksforgeeks.org/live-search-using-flask-and-jquery/-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+      jQuery(document).ready(function($){
+    
+  $('.game-table td').each(function(){
+  $(this).attr('data-search-term', $(this).text().toLowerCase());
+  });
+    
+  $('.live-search-box').on('keyup', function(){
+    
+  var searchTerm = $(this).val().toLowerCase();
+
+    
+      $('.game-table td').each(function(){
+    
+          if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+              $(this).show();
+          } else {
+              $(this).hide();
+          }
+    
+      });
+    
+  });
+    
+  });
+  </script>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Resource: https://bbbootstrap.com/snippets/bootstrap-5-bootstrap-5-carousel-vanilla-multiple-items-80120567-->
+  <br/>
+<h3>Manage Your Friends</h3>
+<br>
+<!--Add a friend-->
+<form method="POST">
+  {{addform.username(class_='form-control',style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+  <br>
+  {{addform.submitadd(class_='btn-primary btn-lg')}}
+  {{addform.csrf_token()}}
+  <br> <br>
+  <br> <br>
+<table class="table table-hover friend">
+    <thead>
+      <tr>
+        <!--Column Headers if needed-->
+        <td>Friend's Username</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+
+<!--List our games in a table format-->
+{% for friend in user.is_friends %}
+      <tr>
+          <td class="friend">{{ friend.username }}</td>
+          <td>
+            <button type="button" class="btn-danger btn-sm" name="removefriend" value="{{friend.id}}" 
+            onclick="window.location.href='{{url_for('removeFriend', friendID=friend.id)}}';">Remove</button>
+          </td>
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

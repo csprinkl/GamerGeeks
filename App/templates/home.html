@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html style = "width:100%;height:auto; background-color:#242630; color:white">
+<head>
+    <title>
+        Home Library
+    </title>
+    <style>
+    .cards-wrapper{
+      text-align: center;
+      display: flex;
+      margin-left: 15%;
+    }
+    
+    .card{
+      margin: 0;
+      width: calc(80%/3);
+      height: 420px;
+      color:white;
+      overflow: scroll;
+      background-color:#313439;
+      
+    }
+    
+    .card::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .card-img-top{
+      width: 100%;
+      height: 300px;
+    }
+    
+    .card-top{
+      margin: 0 .5rem;
+      width: calc(80%/3);
+      height: 600px;
+      background-color:#313439;
+      
+    }
+    </style>
+</head>
+<div style = "width:100%;height:auto; background-color:#242630">
+<h1>Welcome back {{ username }}!</h1>
+<!-- Resource: https://bbbootstrap.com/snippets/bootstrap-5-bootstrap-5-carousel-vanilla-multiple-items-80120567-->
+  <br/>
+{% if library|length < 1 %}
+<h2>You have no games in your library!</h2>
+<br>
+<h5>
+  You should head to the store to buy some!
+</h5>
+{% else %}
+<h3>What would you like to play?</h3>
+</div>
+<table>
+<tbody>
+<br>
+<!--List our games in a card format-->
+{% for i in range(0, library|length, 4) %}
+<tr>
+  <td>
+    <div class="card-wrapper">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src= "{{ library[i].image }}" alt="Card image cap">
+          <div class="card-body">
+            <h6 class="card-title">{{ library[i].name }}</h6>
+            <a href="../" download="GameInstaller.exe" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+  </td>
+  {% if i+1 < library|length %}
+  <td>
+    <div class="card-wrapper">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src= "{{ library[i+1].image }}" alt="Card image cap">
+          <div class="card-body">
+            <h6 class="card-title">{{ library[i+1].name }}</h6>
+            <a href="../" download="GameInstaller.exe" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+  </td>
+  {% endif %}
+  {% if i+2 < library|length %}
+  <td>
+    <div class="card-wrapper">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src= "{{ library[i+2].image }}" alt="Card image cap">
+          <div class="card-body">
+            <h6 class="card-title">{{ library[i+2].name }}</h6>
+            <a href="../" download="GameInstaller.exe" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+  </td>
+  {% endif %}
+  {% if i+3 < library|length %}
+  <td>
+    <div class="card-wrapper">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src= "{{ library[i+3].image }}" alt="Card image cap">
+          <div class="card-body">
+            <h6 class="card-title">{{ library[i+3].name }}</h6>
+            <a href="../" download="GameInstaller.exe" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+  </td>
+  {% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+{% endblock %}
+</html>

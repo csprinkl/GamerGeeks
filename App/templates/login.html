@@ -1,0 +1,29 @@
+{% extends "baseLogin.html" %}
+{% block content %}
+<div class="jumbotron" style = "width:100%;height:auto; background-color:#242630; color:white">
+
+        <form class="login_form" style = " color: darkgrey;width: 500px;margin:auto;" method="POST">
+			<h1 style = "color:#adafae">Login to your Account</h1>
+            {{ form.hidden_tag() }}
+            {{ form.username(class_="StringField form-control" ,style = "width: 150px;color: white;background-color:#313439; margin:auto; border:#282d31", placeholder="Username") }}
+            <br>
+            {{ form.password(class_="StringField form-control",style = "width: 150px;color: white;background-color:#313439; margin:auto; border:#282d31", placeholder="Password") }}
+            <br>
+            {{ form.submit(class="btn-light btn-lg",style = "width: 150px;color: white;background-color:#276cd4; margin:auto; border:#282d31" ) }}
+            <br>
+            <br>
+            <p style = "color:#adafae">Don't have an account? Click the button below to make one!</p>
+            <br>
+            <button class="btn-light btn-lg" style = "width: 200px;background-color:#808080; margin:auto; border:#282d31; color: white;">
+				<a href="{{url_for('signup')}}" style = "color:white">Create Account</a>
+				</button>
+            <br>
+            <br>
+            <p style = "color:#adafae">Login Help</p>
+            <button class="btn-light btn-lg" style = "width: 200px;background-color:#808080; margin:auto; border:#282d31; color: white;">
+				<a href="{{url_for('forgotPassword')}}">I forgot my password!</a>
+			</button>
+
+        </form>
+</div>
+{% endblock %}

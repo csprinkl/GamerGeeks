@@ -1,0 +1,39 @@
+{% extends "baseLogin.html" %}
+{% block content %}
+<div class="jumbotron shadow" style = "width:100%;height:auto; background-color:#242630; color: #adafae;border: 3px solid black;">
+    <header>
+	<link rel="stylesheet" href="{{ url_for('static', filename ='style.css')}}">
+	</header>
+        <h1>
+            Create an Account
+        </h1>
+    <form method="POST">
+        {{signup.username.label(class_='StringFieldLabel')}}
+		<br> 
+		{{signup.username(class_='StringField form-control' , style = "width: 150px;color: white;background-color:#313439; margin:auto; border:#282d31", placeholder = "Username")}}
+        <br>
+        {{signup.password.label(class_='StringFieldLabel')}}
+		<br> 
+		{{signup.password(class_='StringField form-control' , style = "width: 150px;color: white;background-color:#313439; margin:auto; border:#282d31", placeholder = "Password")}}
+        <br>
+        <p>Please enter a security question and answer to recover your account in case you cannot login</p>
+        {{signup.security_question.label(class_='StringFieldLabel')}}
+        <br>
+        {{signup.security_question(class_='StringField form-control', style = "width: 300px;color: white;background-color:#313439; margin:auto; border:#282d31")}}
+        <br>
+        {{signup.security_answer.label(class_='StringFieldLabel')}} 
+		<br>
+		{{signup.security_answer(class_='StringField form-control', style = "width: 150px;color: white;background-color:#313439; margin:auto; border:#282d31")}}
+        <br>
+        {{signup.submit(class_='btn-light btn-lg',style = "width: 150px;color: white;background-color:#276cd4; margin:auto; border:#282d31")}}
+        {{signup.csrf_token()}}
+        <br>
+        <p>Already have an account? Click the button below to login!</p>
+        <button class="btn-light btn-lg" style = "width: 150px;background-color:#808080; margin:auto; border:#282d31; color:white;">
+			<a href="{{url_for('login')}}">Login</a>
+		</button>  
+        <br>
+    </form>
+</div>
+
+{% endblock %}

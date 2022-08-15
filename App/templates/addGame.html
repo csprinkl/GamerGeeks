@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+        <h1>
+            Add Game to Store
+        </h1>
+        <p>
+            Please enter the information for the game you would like to add.
+        </p>
+        <form method = "POST">
+            {{addGame.name.label(class_='StringFieldLabel')}}
+            <br>
+            {{addGame.name(class_='StringField form-control', style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+            <br>
+            {{addGame.image.label(class_='StringFieldLabel')}}
+            <br>
+            {{addGame.image(class_='StringField form-control',style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+            <br>
+            {{addGame.description.label(class_='StringFieldLabel')}}
+            <br>
+            {{addGame.description(class_='StringField form-control',style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+            <br>
+            {{addGame.price.label(class_='StringFieldLabel')}}
+            <br>
+            {{addGame.price(class_='StringField form-control',style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+            <br>
+            {{addGame.genre.label(class_='StringFieldLabel')}}
+            <br>
+            {{addGame.genre(class_='StringField form-control', style = "color: white;background-color:#313439; margin:auto; border:#282d31")}}
+            <br>
+            {{addGame.submit(class_='btn-light btn-lg',style = "width: 150px;color: white;background-color:#276cd4; margin:auto; border:#282d31")}}
+            {{addGame.csrf_token()}}
+        </form>
+    {% endblock %}

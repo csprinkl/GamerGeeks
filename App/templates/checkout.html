@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+    <h1>
+        Please Enter your Payment Information
+    </h1>
+    <br>
+    <form method="POST">
+        {{checkout.card(class_="StringField form-control",style = "color: white;background-color:#313439; margin:auto; border:#282d31", placeholder="Card Number")}}
+        <br>
+        {{checkout.exp(class_="StringField form-control",style = "color: white;background-color:#313439; margin:auto; border:#282d31", placeholder="Expiration Date")}}
+        <br>
+        {{checkout.cvv(class_="StringField form-control",style = "color: white;background-color:#313439; margin:auto; border:#282d31", placeholder="CVV")}}
+        <br>
+        {{checkout.submit(class="btn-light btn-lg",style = "color: white;background-color:#276cd4; margin:auto; border:#282d31" )}}
+    </form>
+        {% if friendFlag == true %}
+        <br>
+        <br>
+        {% if friend.username != username%}
+        <h3>Purchase for {{friend.username}}</h3>
+        {% else %}
+        <h3>
+            Please Select a Friend to Gift this Purchase to
+        </h3>
+        {% endif %}
+        <table class="table table-hover friend">
+            <thead>
+              <tr>
+                <!--Column Headers if needed-->
+                <td>Friend's Username</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+        
+        <!--List our games in a table format-->
+        {% for friend in user.is_friends %}
+        <tr>
+            <td class="friend">{{friend.username}}</td>
+            <td>
+                <form method="POST">
+                    {{choosefriendform.friendID(value=friend.id)}}
+                    {{ choosefriendform.submit(class_="btn-sm btn-danger") }}
+                    {{ choosefriendform.csrf_token() }}
+                </form>
+            </td>
+            
+        </tr>
+        {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+    {% endblock %}
